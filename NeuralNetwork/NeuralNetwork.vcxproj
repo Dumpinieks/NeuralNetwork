@@ -116,11 +116,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="NN.h" />
+    <ClInclude Include="Regularization.h" />
     <ClInclude Include="Sigmoid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="NN.cpp" />
+    <ClCompile Include="Regularization.cpp" />
     <ClCompile Include="Sigmoid.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

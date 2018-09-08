@@ -1,5 +1,6 @@
 #include "Matrix.h"
-
+#include <iostream>
+#include <cmath>
 
 
 Matrix::Matrix(int nrow, int ncol) {
@@ -101,7 +102,20 @@ Matrix* Matrix::dot(Matrix* m) {
 		}
 	}
 	return res;
-};
+}
+
+float Matrix::norm() {
+	float res = 0;
+	for (int  i = 0; i < size[0]; i++)
+	{
+		for (int k = 0; k < size[1]; k++)
+		{
+			res += pow(matrix[i][k], 2.f);
+		}
+	}
+	res = sqrtf(res);
+	return res;
+}
 
 Matrix* Matrix::copy() {
 	Matrix* res = new Matrix(size[0], size[1]);
@@ -113,6 +127,17 @@ Matrix* Matrix::copy() {
 		}
 	}
 	return res;
+}
+
+void Matrix::print() {
+	for (int i = 0; i < size[0]; i++)
+	{
+		for (int k = 0; k < size[1]; k++)
+		{
+			std::cout << matrix[i][k] << '\t';
+		}
+		std::cout << std::endl;
+	}
 }
 
 Matrix::~Matrix() {

@@ -19,6 +19,10 @@ public:
 
 	Matrix* dot(Matrix*);
 
+	float norm();
+
+	void print();
+
 	Matrix* copy();
 
 	~Matrix();
