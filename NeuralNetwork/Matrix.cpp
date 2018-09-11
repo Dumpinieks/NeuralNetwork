@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 
+Matrix::Matrix() {}
 
 Matrix::Matrix(int nrow, int ncol) {
 	size[0] = nrow;
@@ -140,10 +141,28 @@ void Matrix::print() {
 	}
 }
 
+Matrix* Matrix::sign() {
+	Matrix* res = new Matrix(size[0], size[1]);
+	res = this->copy();
+	for (int i = 0; i < size[0]; i++)
+	{
+		for (int k = 0; k < size[1]; k++)
+		{
+			if (res->matrix[i][k] == 0.f)
+				res->matrix[i][k] = 0;
+			if (res->matrix[i][k] > 0.f)
+				res->matrix[i][k] = 1;
+			else
+				res->matrix[i][k] = -1;
+		}
+	}
+	return res;
+}
+
 Matrix::~Matrix() {
 	for (size_t i = 0; i < size[0]; i++)
 	{
-		free(matrix[i]);
+		free(this->matrix[i]);
 	}
-	free(matrix);
+	free(this->matrix);
 };
