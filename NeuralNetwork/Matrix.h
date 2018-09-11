@@ -10,20 +10,20 @@ public:
 
 	Matrix(int nrow, int ncol);
 
-	Matrix* operator+ (Matrix*);
-	Matrix* operator+ (float);
-	Matrix* operator- (Matrix*);
-	Matrix* operator- (float);
-	Matrix* operator* (Matrix*);
-	Matrix* operator* (float);
+	Matrix operator+ (Matrix);
+	Matrix operator+ (float);
+	Matrix operator- (Matrix);
+	Matrix operator- (float);
+	Matrix operator* (Matrix);
+	Matrix operator* (float);
 
-	Matrix* dot(Matrix*);
+	Matrix dot(Matrix);
 
 	float norm();
 
 	void print();
 
-	Matrix* copy();
+	Matrix copy();
 
 	~Matrix();
 };
