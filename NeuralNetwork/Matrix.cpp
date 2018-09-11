@@ -143,7 +143,7 @@ void Matrix::print() {
 Matrix::~Matrix() {
 	for (size_t i = 0; i < size[0]; i++)
 	{
-		free(matrix[i]);
+		delete matrix[i];
 	}
-	free(matrix);
+	delete matrix;
 };
